@@ -1,0 +1,218 @@
+@import "src/styles/variables";
+
+.container {
+  display: flex;
+  width: 1280px;
+  margin: 12px auto 0 auto;
+  box-shadow: 0 0 40px rgba(86, 198, 173, 0.13);
+  border-radius: 10px;
+
+  .calculator {
+    width: 685px;
+    padding: 40px 93px 42px 45px;
+
+    .tabs {
+      max-height: 19px;
+    }
+
+    label {
+      font-size: 16px;
+      line-height: 18px;
+      color: $label-color;
+    }
+
+    .custom-input-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: 45px;
+      position: relative;
+
+      input {
+        height: 50px;
+        margin-top: 12px;
+        background-color: $input-background-color;
+        border: none;
+        font-size: 18px;
+        line-height: 20px;
+        color: $input-text-color;
+        padding-left: 22px;
+        padding-right: 432px;
+        letter-spacing: 0;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      .add, .subtract {
+        position: absolute;
+        width: 19px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        bottom: 13px;
+
+      }
+
+      .add {
+        left: 140px;
+      }
+
+      .subtract {
+        left: 115px;
+      }
+    }
+
+    .custom-select-wrapper {
+      margin-top: 28px;
+
+      .custom-select {
+        margin-top: 12px;
+
+        .search {
+          padding: 0;
+          position: relative;
+
+          input {
+            width: 100%;
+            height: 40px;
+            border: 1px solid $input-border-color;
+            border-radius: 6px;
+            margin-bottom: 30px;
+
+            &:focus-visible {
+              outline: none;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 20px;
+              color: $input-search-text-color;
+              padding-left: 40px;
+            }
+          }
+
+          img {
+            position: absolute;
+            left: 16px;
+            top: 14px;
+          }
+
+          p {
+            margin: 0 16px 18px 16px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: $input-search-description;
+          }
+        }
+      }
+
+      .option {
+        display: flex;
+
+        &-text {
+          margin-right: 23px;
+          font-size: 18px;
+        }
+
+        &-apr {
+          padding: 3px 5px;
+          background: $color-light-green;
+          border-radius: 4px;
+          font-size: 12px;
+          line-height: 14px;
+          color: $color-white;
+        }
+      }
+
+      .dropdown-option {
+        margin: 2px 0;
+
+        .option-text {
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .calculator-footer {
+      display: flex;
+      align-items: center;
+      margin-top: 48px;
+
+      div {
+        display: flex;
+        align-items: center;
+
+        .info-grey-icon {
+          margin-left: 10px;
+        }
+
+        .info-green-icon {
+          margin-left: 13px;
+        }
+      }
+
+      .slide-toggle {
+        margin-left: 36px;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .result-view {
+    width: 595px;
+    background-color: $color-green;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 40px 50px 22px 50px;
+    color: $color-white;
+
+    &-label {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 55px;
+      line-height: 64px;
+      margin-top: 6px;
+    }
+
+    &-percent {
+      margin-top: 36px;
+
+      &-description {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+
+    &-rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 37px;
+
+      &-button {
+        border: 2px solid $color-white;
+        border-radius: 7px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+        padding: 13px 54px 14px 54px;
+      }
+    }
+
+    &-description {
+      margin-top: 33px;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

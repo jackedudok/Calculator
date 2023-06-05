@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="calculator" [formGroup]="calculatorFormGroup">
+    <mat-tab-group disableRipple class="tabs">
+      <mat-tab label="Lorem1"></mat-tab>
+      <mat-tab label="Lorem2"></mat-tab>
+      <mat-tab label="Lorem3"></mat-tab>
+      <mat-tab label="Lorem4"></mat-tab>
+    </mat-tab-group>
+
+    <div class="custom-input-wrapper">
+      <label for="amount">Amount?</label>
+      <input numbersOnly [currencyCode]="currencyCode"
+             formControlName="amount" type="text"
+             id="amount">
+
+      <button class="add" (click)="addAmount()">
+        <img src="assets/icons/add.svg" alt="add">
+      </button>
+
+      <button class="subtract" (click)="subtractAmount()">
+        <img src="assets/icons/subtract.svg" alt="subtract">
+      </button>
+    </div>
+
+    <div class="custom-select-wrapper">
+      <label for="amount">Currency?</label>
+      <ng-select #select class="custom-select" (change)="numbersOnlyDirective.applyFormatting(currencyCode)"
+                 [searchable]="false" [items]="currencies" [clearable]="false"
+                 formControlName="currency" bindLabel="name" bindValue="id">
+
+        <ng-template ng-label-tmp let-item="item">
+          <div class="option">
+            <div class="option-text">{{item.name}}</div>
+            <div class="option-apr">APR {{item.apr}}%</div>
+          </div>
+        </ng-template>
+
+        <ng-template ng-header-tmp>
+          <div class="search">
+            <input #search type="text" (input)="select.filter(search.value)"/>
+
+            <img src="assets/icons/search.svg" alt="search">
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          </div>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item">
+          <div class="option dropdown-option">
+            <div class="option-text">{{item.name}}</div>
+            <div class="option-apr">APR {{item.apr}}%</div>
+          </div>
+        </ng-template>
+      </ng-select>
+    </div>
+
+    <div class="custom-select-wrapper">
+      <label for="amount">Period?</label>
+      <ng-select #select class="custom-select" [searchable]="false" [items]="period" [clearable]="false"
+                 formControlName="period" bindLabel="value" bindValue="value">
+      </ng-select>
+    </div>
+
+    <div class="calculator-footer">
+      <div>
+        <span>Lorem ipsum</span>
+
+        <img class="info-grey-icon" src="assets/icons/info-grey.svg" alt="info">
+      </div>
+
+      <mat-slide-toggle class="slide-toggle" disableRipple checked></mat-slide-toggle>
+
+      <div>
+        <span>Lorem ipsum dolor sit</span>
+
+        <img matTooltipPosition="above"
+             matTooltip="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Minus cumque animi mollitia ipsam quae fuga voluptatibus aut quia autem nulla corrupti suscipit quam, rem"
+             class="info-green-icon" src="assets/icons/info-green.svg" alt="info">
+      </div>
+    </div>
+  </div>
+  <div class="result-view">
+    <div class="result-view-profit">
+      <span class="result-view-label">Profit</span>
+
+      <div class="result-view-value">{{ profit | currency: currencyCode:'symbol':'1.0-0' }}
+      </div>
+    </div>
+
+    <div class="result-view-percent">
+      <span class="result-view-label">Percent</span>
+
+      <div class="result-view-value">{{percent}}%</div>
+
+      <p class="result-view-percent-description">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    </div>
+
+    <div class="result-view-rating">
+      <div>
+        <img *ngFor="let star of ratingStars" [ngStyle]="{
+          'width': star.width,
+          'height': star.height,
+          'margin-right': '7px'
+        }" src="assets/icons/star.svg" alt="star">
+      </div>
+
+      <div class="result-view-rating-button">
+        Lorem ipsum dolor sit
+      </div>
+    </div>
+
+    <div class="result-view-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cumque animi mollitia ipsam quae fuga
+      voluptatibus aut quia autem nulla corrupti suscipit quam, rem veniam, reiciendis, temporibus magni quis velit!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cumque animi mollitia ipsam quae fuga
+      voluptatibus aut quia autem nulla corrupti suscipit quam, rem veniam, reiciendis, temporibus magni quis velit!
+      Lorem ipsum dolor sit amet consectetur adipisicing
+    </div>
+  </div>
+</div>

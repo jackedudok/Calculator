@@ -1,0 +1,84 @@
+@import "variables";
+
+.mat-mdc-tab-labels {
+  .mdc-tab {
+    min-width: 48px !important;
+    height: fit-content !important;
+    flex-grow: 0 !important;
+    padding: 0 0 1px 0 !important;
+    margin-right: 31px;
+  }
+
+  .mdc-tab__text-label {
+    letter-spacing: 0 !important;
+    line-height: 18px !important;
+  }
+
+  .mat-mdc-tab .mdc-tab__text-label {
+    color: $label-color;
+  }
+
+  .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+    color: $label-color;
+  }
+
+  .mat-mdc-tab.mdc-tab--active:focus .mdc-tab__text-label {
+    color: $label-color;
+  }
+
+  .mat-mdc-tab.mdc-tab--active:hover .mdc-tab__text-label {
+    color: $label-color;
+  }
+
+  .mdc-tab-indicator__content--underline {
+    border-color: $color-green !important;
+  }
+}
+
+.mdc-switch__icons, .mdc-switch__ripple {
+  display: none;
+}
+
+.mat-mdc-slide-toggle .mdc-switch {
+  width: 62px !important;
+}
+
+.mdc-switch__track {
+  border-radius: 50px !important;
+  height: 32px !important;
+}
+
+.mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 100% !important;
+}
+
+.mat-mdc-slide-toggle .mdc-switch--selected .mdc-switch__handle {
+  left: -8px;
+}
+
+.mat-mdc-slide-toggle .mdc-switch--unselected .mdc-switch__handle {
+  left: 5px;
+}
+
+.mat-mdc-slide-toggle .mdc-switch:enabled .mdc-switch__track::after {
+  background-color: $toggle-background-color !important;
+}
+
+.mat-mdc-slide-toggle .mdc-switch.mdc-switch--selected:enabled .mdc-switch__handle::after {
+  background-color: $color-green !important;
+  box-shadow: 0 2px 4px rgba(86, 198, 173, 0.4) !important;
+}
+
+.mdc-tooltip__surface {
+  padding: 10px 15px !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+  color: $color-white !important;
+  max-width: 350px !important;
+  background-color: $color-black !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+}
